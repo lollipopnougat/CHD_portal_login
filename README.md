@@ -17,6 +17,26 @@
 
 ## 示例代码
 
+### 运行示例
+
+首先请先安装依赖:
+
+#### Windows 
+
+以**管理员身份运行PowerShell或CMD**，输入
+
+```bash
+pip install pycryptodomex
+```
+
+#### Linux 和 Mac 
+
+请使用
+
+```bash
+pip install pycryptodome
+```
+
 ### 示例1 (原 `test.py`)
 
 ```python
@@ -41,6 +61,7 @@ if __name__ == '__main__':
 ### 示例2
 
 就是这个项目所附带的的 `test.py` ，包含了获取信息门户的成绩功能，具体请查看[代码](https://github.com/lollipopnougat/CHD_portal_login/blob/master/test.py)
+
 
 #### 示例2 运行结果
 
