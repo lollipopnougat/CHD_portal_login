@@ -31,10 +31,10 @@ pip install pycryptodomex
 
 #### Linux 和 Mac 
 
-请使用
+请使用 shell 执行
 
 ```bash
-pip install pycryptodome
+pip install pycryptodomex
 ```
 
 ### 示例1 (原 `test.py`)
