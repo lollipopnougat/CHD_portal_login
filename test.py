@@ -31,7 +31,7 @@ if __name__ == '__main__':
     session.cookies = cookies  # 手动加载返回的cookies
     res = session.get(url)
 
-    soup = BS(res.text, 'lxml')
+    soup = BS(res.text, 'html.parser') # 在 Android 上未能安装lxml，就换用html.parser了
     text1 = soup.findAll(class_=re.compile('griddata'))
     st0 = ['学年度', '学期', '门数', '总学分', '平均绩点']
     for i in text1:
@@ -58,7 +58,7 @@ if __name__ == '__main__':
         'td', text=re.compile(r'[\w|\d]{2}\d{5}[\w|\d]\.\d\d'))  # 匹配课程号
 
     for i in sc:
-        res = []
+        result = []
         sc1 = i.parent.get_text('%').split('%')[1:]
         for j in range(3):
             del sc1[j + 1]
@@ -71,18 +71,18 @@ if __name__ == '__main__':
         del sc1[6]
         del sc1[7]
         for j in range(7):
-            res.append(sc1[j])
+            result.append(sc1[j])
         del sc1
         scr = i.parent.findAll('td', style=True) # 搜索含有style属性的td元素
         for j in range(6):
             if scr[j].text == '':
-                res.append('N/A')
+                result.append('N/A')
             else:
-                res.append(format_str(scr[j].text))
-        res.append(format_str(i.parent.findAll('td')[-1].text))
+                result.append(format_str(scr[j].text))
+        result.append(format_str(i.parent.findAll('td')[-1].text))
 
         for j in range(14):
-            print(sc0[j] + ': ' + res[j])
+            print(sc0[j] + ': ' + result[j])
         print(' ')
     #print(res.text)
     input('任意键退出')

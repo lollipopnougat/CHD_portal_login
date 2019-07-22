@@ -1,4 +1,8 @@
 sco.html
 *.log
+*.spec
 bs4pra.py
 __pycache__/
+portal_login/__pycache__/
+build/
+dist/

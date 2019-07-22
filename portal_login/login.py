@@ -27,7 +27,7 @@ def get_login_data(login_url, headers):
     #获取登录所需表单数据
     response = requests.get(login_url, headers=headers)
     html = response.text
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     #获取密钥来加密密码
     pattern = re.compile('var\s*?pwdDefaultEncryptSalt\s*?=\s*?"(.*?)"')
     key = pattern.findall(html)[0]

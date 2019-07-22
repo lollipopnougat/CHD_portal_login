@@ -31,11 +31,13 @@ pip install pycryptodomex
 
 #### Linux 和 Mac 
 
-请使用 shell 执行
+请使用 shell 执行(这里还有坑!有些资料上说是 `pycryptodome` ，然而安上并不能用...最后还是用了 `pycryptodomex` )
 
 ```bash
 pip install pycryptodomex
 ```
+
+经过测试在 `Android` 上也能跑起来(使用[NeoTerm](https://github.com/NeoTerm/NeoTerm))
 
 ### 示例1 (原 `test.py`)
 
