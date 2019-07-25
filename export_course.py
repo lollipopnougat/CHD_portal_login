@@ -1,9 +1,7 @@
+
 '''
-测试模块
-用于测试是否可登录
-'''
-'''
-现在可用于获取自己所有学期成绩    
+获取自己所有学期成绩 导出csv文件
+导出的csv文件将放在export/下(没有会新建)
 '''
 import requests
 from chd_portal_login.login import *
@@ -95,4 +93,6 @@ if __name__ == '__main__':
     #print(res.text)
     f.close()
     print('每科成绩保存在 export/test.csv 中')
+    print('正在打开export文件夹...')
+    os.system('start export')
     input('任意键退出')
